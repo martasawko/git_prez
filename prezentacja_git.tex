@@ -1,0 +1,120 @@
+\documentclass{beamer}
+\usepackage{polski}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+
+\title{Git}
+\author{Marta Sawko}
+\usetheme{Singapore}
+\usecolortheme{dove}
+\AtBeginSection[]%i to niby generuje w preambule spisy treści?
+\AtBeginSubsection[]
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+ \frametitle{Plan semianrium}
+ \tableofcontents
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{System kontroli wersji}
+ \framesubtitle{\textbf{V}ersion \textbf{C}ontrol \textbf{S}ystem}
+ Jest to (co?), pozwalający na szeroko rozumiane nadzorowanie zmian w plikach w czasie, np.:
+ \begin{itemize}
+  \item badania zmian w obrębie konkretnych fragmentów tekstu, jak linijki
+  \item powrotu do wcześniejszych wersji 
+  \item w pracy grupowej - znajdowanie winnego powstałych zmian
+ \end{itemize} 
+ Pierwszy pomysł na rozwiązanie - Local Control Version System.
+\end{frame}
+
+\section{Centalizacja a rozproszenie}
+\subsection{Centralizacja}
+\begin{frame}
+ \frametitle{\textbf{C}entral \textbf{V}ersion Control \textbf{S}ystems}
+  Zlokalizowane w jednym miejscu. (tzn gdzie, serwer?) \\
+  Posiadając pewne uprawnienia można wiedzieć dokładnie co kto robi.\\
+  [obrazek, fig 1.2]
+  \\Przykładowe CVS: \textit{Subversion, Perforce}
+\end{frame}
+
+\begin{frame}
+  Potencjalne wady CVS:
+  \begin{itemize}
+  \item kiedy pada centralny serwer, zaniechana jest praca nad projektem
+  \item kiedy padnie sieć[inaczej] współpracownika zaniechana jest jego praca nad projektem
+  \item kiedy pada centralny dysk, na którym wszyscy pracują, to tracimy wszystkie dane 
+  \item tylko snapshoty (co to znaczy?)
+ \end{itemize}
+\end{frame}
+
+\subsection{Dystrybucja}
+\begin{frame}
+ \frametitle{\textbf{D}istributed \textbf{V}ersion \textbf{C}ontrol \textbf{S}ystems}
+  Każdy klon jest pełną kopią danych.
+  [fig. 1-3]
+  \\Przykłady DVCs: \textit{Git, Mercurial}
+\end{frame}
+
+\section{Git}
+\subsection{Historia}
+\begin{frame}
+ \frametitle{Jak zrodził się Git?}
+GNU, jądra Linuxa, patches, BitKeeper \\
+Linus Torvalds założył, że to nowe narzędzie powinno \\
+  \begin{itemize}
+  \item być dystrybuowalne
+  \item unieść jądro Linuxa
+  \item wspierać pracę nieliniową
+ \end{itemize}
+\end{frame}
+
+\subsection{Istota}
+\begin{frame}
+ \frametitle{Czym jest?}
+ Tutaj bardzo nie rozumiem:
+ Stream of snaphots - nie przetrzymują kolejnej serii plików, ale "linkują".(Dochodzi to pytanie - co to znaczy, że Git patrzy globalnie, nie plikocentralnie, ale projektocentralnie)
+ [książka,str.32]\\
+ Przeglądanie historii odbywa się na poziomie lokalnym.\\
+ Lokalnie odbywa się również \textit{commit}.\\
+\end{frame}
+
+\begin{frame}
+ \frametitle{Trzy fazy pracy Gita}
+ \framsubtitle{Committed, modified, staged}
+ Wyróżniamy trzy etapy pracy w ramach lokalnego repozytorium
+ [fig.1-6]
+\end{frame}
+
+
+\subsection{Obsługa}
+
+\subsection{Zalety}
+\begin{frame}
+\frametitle{Zalety}
+\begin{itemize}
+ \item 
+ \item Commit popełnia się offline, a synchronizacja jest nieinteraktywna
+\end{itemize}
+ 
+\end{frame}
+
+\subsection{Rozmówki gitowskie}
+\begin{frame}
+ \frametitle{Savoir-vivre w Gitcie}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bibliografia}
+\nocite{pro_git}
+\bibliographystyle{plain}
+\bibliography{bibliografia}  
+\end{frame}
+
+\end{document}
