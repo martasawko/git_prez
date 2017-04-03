@@ -8,18 +8,24 @@
 \author{Marta Sawko}
 \usetheme{Singapore}
 \usecolortheme{dove}
-% \AtBeginSection[]%i to niby generuje w preambule spisy treści?
-% \AtBeginSubsection[]
+\AtBeginSection{%
+\begin{frame}{Plan semianrium}
+  \tableofcontents[hideothersubsections]
+\end{frame}
+}
+%i to niby generuje w preambule spisy treści?
+\AtBeginSubsection[]{%
+\begin{frame}{Plan semianrium}
+  \tableofcontents[currentsection,currentsubsection,hideothersubsections]
+\end{frame}
+}
 
 \begin{document}
 
 \frame{\titlepage}
-
-\begin{frame}
- \frametitle{Plan semianrium}
- \tableofcontents
+\begin{frame}{Plan semianrium}
+  \tableofcontents
 \end{frame}
-
 
 \begin{frame}
  \frametitle{System kontroli wersji}
