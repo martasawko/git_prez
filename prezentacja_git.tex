@@ -4,27 +4,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage{default}
 
+\usepackage[style=authortitle,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
+
 \title{Git}
 \author{Marta Sawko}
 \usetheme{Singapore}
 \usecolortheme{dove}
-\AtBeginSection{%
-\begin{frame}{Plan semianrium}
-  \tableofcontents[hideothersubsections]
-\end{frame}
-}
-%i to niby generuje w preambule spisy treści?
-\AtBeginSubsection[]{%
-\begin{frame}{Plan semianrium}
-  \tableofcontents[currentsection,currentsubsection,hideothersubsections]
-\end{frame}
-}
 
 \begin{document}
 
 \frame{\titlepage}
 \begin{frame}{Plan semianrium}
-  \tableofcontents
+  \tableofcontents[hidesubsections]
 \end{frame}
 
 \begin{frame}
@@ -49,7 +41,7 @@
 \end{frame}
 
 \begin{frame}
-  Potencjalne wady CVS:
+  Potencjalne wady CVS:\@
   \begin{itemize}
   \item kiedy pada centralny serwer, zaniechana jest praca nad projektem
   \item kiedy padnie sieć[inaczej] współpracownika zaniechana jest jego praca nad projektem
@@ -106,17 +98,13 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
  
 \end{frame}
 
+\begin{frame}[c]{Tu będzie obrazek i referencja}
+  \footfullcite{pro_git}
+\end{frame}
+
 \subsection{Rozmówki gitowskie}
 \begin{frame}
  \frametitle{Savoir-vivre w Gitcie}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Bibliografia}
-\nocite{pro_git}
-\bibliographystyle{plain}
-\bibliography{bibliografia}  
 \end{frame}
 
 \end{document}
