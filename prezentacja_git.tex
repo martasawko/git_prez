@@ -8,23 +8,12 @@
 \author{Marta Sawko}
 \usetheme{Singapore}
 \usecolortheme{dove}
-\AtBeginSection{%
-\begin{frame}{Plan semianrium}
-  \tableofcontents[hideothersubsections]
-\end{frame}
-}
-%i to niby generuje w preambule spisy treści?
-\AtBeginSubsection[]{%
-\begin{frame}{Plan semianrium}
-  \tableofcontents[currentsection,currentsubsection,hideothersubsections]
-\end{frame}
-}
 
 \begin{document}
 
 \frame{\titlepage}
 \begin{frame}{Plan semianrium}
-  \tableofcontents
+  \tableofcontents[hidesubsections]
 \end{frame}
 
 \begin{frame}
