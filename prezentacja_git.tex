@@ -8,8 +8,8 @@
 \author{Marta Sawko}
 \usetheme{Singapore}
 \usecolortheme{dove}
-\AtBeginSection[]%i to niby generuje w preambule spisy treści?
-\AtBeginSubsection[]
+% \AtBeginSection[]%i to niby generuje w preambule spisy treści?
+% \AtBeginSubsection[]
 
 \begin{document}
 
@@ -35,12 +35,11 @@
 
 \section{Centalizacja a rozproszenie}
 \subsection{Centralizacja}
-\begin{frame}
- \frametitle{\textbf{C}entral \textbf{V}ersion Control \textbf{S}ystems}
+\begin{frame}{\textbf{C}entral \textbf{V}ersion Control \textbf{S}ystems}
   Zlokalizowane w jednym miejscu. (tzn gdzie, serwer?) \\
   Posiadając pewne uprawnienia można wiedzieć dokładnie co kto robi.\\
-  [obrazek, fig 1.2]
-  \\Przykładowe CVS: \textit{Subversion, Perforce}
+  obrazek, fig 1.2
+  \\ Przykładowe CVS\@: \textit{Subversion}, \textit{Perforce}
 \end{frame}
 
 \begin{frame}
@@ -75,8 +74,7 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 \end{frame}
 
 \subsection{Istota}
-\begin{frame}
- \frametitle{Czym jest?}
+\begin{frame}{Czym jest?}
  Tutaj bardzo nie rozumiem:
  Stream of snaphots - nie przetrzymują kolejnej serii plików, ale "linkują".(Dochodzi to pytanie - co to znaczy, że Git patrzy globalnie, nie plikocentralnie, ale projektocentralnie)
  [książka,str.32]\\
@@ -84,11 +82,9 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
  Lokalnie odbywa się również \textit{commit}.\\
 \end{frame}
 
-\begin{frame}
- \frametitle{Trzy fazy pracy Gita}
- \framsubtitle{Committed, modified, staged}
+\begin{frame}{Trzy fazy pracy Gita}{Committed, modified, staged}
  Wyróżniamy trzy etapy pracy w ramach lokalnego repozytorium
- [fig.1-6]
+ fig.1-6
 \end{frame}
 
 
