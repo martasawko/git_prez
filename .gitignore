@@ -5,3 +5,8 @@
 *.pdf
 *.snm
 *.toc
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
