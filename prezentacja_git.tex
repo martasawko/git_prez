@@ -15,7 +15,7 @@
 \begin{document}
 
 \frame{\titlepage}
-\begin{frame}{Plan semianrium}
+\begin{frame}{Plan seminarium}
   \tableofcontents
 \end{frame}
 
@@ -36,8 +36,11 @@
 \begin{frame}{\textbf{C}entral \textbf{V}ersion Control \textbf{S}ystems}
   Zlokalizowane w jednym miejscu. (tzn gdzie, serwer?) \\
   Posiadając pewne uprawnienia można wiedzieć dokładnie co kto robi.\\
-  obrazek, fig 1.2
-  \\ Przykładowe CVS\@: \textit{Subversion}, \textit{Perforce}
+  \begin{center}
+   \includegraphics[height=0.4\textwidth]{./obrazki/fig-1_2.png}
+   \footfullcite{pro_git}
+ \end{center}
+  Przykładowe CVS\@: \textit{Subversion}, \textit{Perforce}
 \end{frame}
 
 \begin{frame}
@@ -54,9 +57,17 @@
 \begin{frame}
  \frametitle{\textbf{D}istributed \textbf{V}ersion \textbf{C}ontrol \textbf{S}ystems}
   Każdy klon jest pełną kopią danych.
-  [fig. 1-3]
-  \\Przykłady DVCs: \textit{Git, Mercurial}
+\\
+ Przykłady DVCs: \textit{Git, Mercurial}
 \end{frame}
+
+\begin{frame}
+  \begin{center}
+   \includegraphics[height=0.7\textwidth]{./obrazki/fig-1_3.png}
+   \footfullcite{pro_git}
+ \end{center} 
+\end{frame}
+
 
 \section{Git}
 \subsection{Historia}
@@ -82,28 +93,58 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 
 \begin{frame}{Trzy fazy pracy Gita}{Committed, modified, staged}
  Wyróżniamy trzy etapy pracy w ramach lokalnego repozytorium
- fig.1-6
+  \begin{center}
+   \includegraphics[width=0.8\textwidth]{./obrazki/fig-1_6.png}
+   \footfullcite{pro_git}
+ \end{center}
 \end{frame}
 
+\begin{frame}{Różnice w rozumieniu zmian w plikach}{Stream of snapshots vs diff}
+  \begin{center}
+   \includegraphics[width=0.6\textwidth]{./obrazki/fig-1_4.png}\\
+   \includegraphics[width=0.6\textwidth]{./obrazki/fig-1_5.png}
+   \footfullcite{pro_git}
+ \end{center}
 
-\subsection{Obsługa}
+\end{frame}
 
-\subsection{Zalety}
+\begin{frame}{Jak Git dostrzega zmiany?}
+ Pliki przetrzymywane są w kodzie zahashowanym SHA-1 \\
+ Filozofia pointerów - wskaźnik Head, pochodne branche, pochodne commits.
+\end{frame}
+
+\subsection{Branch}
+\begin{frame}{Branch}
+   \begin{center}
+   \includegraphics[width=0.8\textwidth]{./obrazki/fig-3_8.png}
+   \footfullcite{pro_git}
+ \end{center}
+\end{frame}
+
+\section{Obsługa Gita}
+
+\subsection{Inicjalizacja repozytorium}
+\begin{frame}{Jak stworzyć repozytorium}
+ Dwie strategie
+ \begin{itemize}
+  \item Import istniejący projekt
+  [Kod str. 44]
+  \item Klon istniejącego już repozytorium gitowskiego
+  [Również kod str. 44]
+ \end{itemize}
+\end{frame}
+
+\section{Zalety}
+
 \begin{frame}
 \frametitle{Zalety}
 \begin{itemize}
- \item 
+ \item Posiadanie pełnej historii we własnym repozytorium
  \item Commit popełnia się offline, a synchronizacja jest nieinteraktywna
+ \item Dobrze zorganizowana praca na równoległych gałęziach
+ \item Periodic explicit object packing
 \end{itemize}
  
-\end{frame}
-
-\begin{frame}[c]{Tu będzie obrazek i referencja}
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{./obrazki/kot.jpg}
-
-    Kot uczy się gita z książki Pro\footfullcite{pro_git}.
-  \end{center}
 \end{frame}
 
 \subsection{Rozmówki gitowskie}
