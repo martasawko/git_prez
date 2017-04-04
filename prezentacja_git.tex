@@ -12,6 +12,15 @@
 \usetheme{Singapore}
 \usecolortheme{dove}
 
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{%
+  \parbox{\textwidth}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\lstset{frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep}
+
 \begin{document}
 
 \frame{\titlepage}
@@ -56,7 +65,8 @@
 \subsection{Dystrybucja}
 \begin{frame}
  \frametitle{\textbf{D}istributed \textbf{V}ersion \textbf{C}ontrol \textbf{S}ystems}
-  Każdy klon jest pełną kopią danych.
+  Każdy klon jest pełną kopią danych i stanowi oddzielne kompletne repozytorium.\\
+  Czynności takie jak przeglądanie historii, \textit{commit} są szybkie, bo nie wymagają połączenia z serwerem.
 \\
  Przykłady DVCs: \textit{Git, Mercurial}
 \end{frame}
@@ -109,8 +119,9 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 \end{frame}
 
 \begin{frame}{Jak Git dostrzega zmiany?}
- Pliki przetrzymywane są w kodzie zahashowanym SHA-1 \\
- Filozofia pointerów - wskaźnik Head, pochodne branche, pochodne commits.
+ Pliki hashuje się przy użyciu algorytmu \textbf{SHA-1}(Secure Hash Algorithm 1, zapis do 160 bitów, wyświetlanych w postaci 16-stkowej) \\
+ 
+ Filozofia pointerów - wskaźnik Head, pochodne branch, pochodne commits.
 \end{frame}
 
 \subsection{Branch}
@@ -121,17 +132,42 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
  \end{center}
 \end{frame}
 
+\subsection{Merge}
+\begin{frame}{Merge}
+   \begin{center}
+   \includegraphics[width=0.8\textwidth]{./obrazki/fig-3_20.png}
+   \footfullcite{pro_git}
+ \end{center}
+\end{frame}
+
 \section{Obsługa Gita}
 
 \subsection{Inicjalizacja repozytorium}
 \begin{frame}{Jak stworzyć repozytorium}
  Dwie strategie
  \begin{itemize}
-  \item Import istniejący projekt
-  [Kod str. 44]
-  \item Klon istniejącego już repozytorium gitowskiego
-  [Również kod str. 44]
+  \item Import istniejącego projektu \\
+  \texttt{git init}
+  \item Klon istniejącego już repozytorium gitowskiego \\
+  \texttt{git clone https://github.com/libgit2/libgit2}
  \end{itemize}
+\end{frame}
+
+\subsection{Stage i commit}
+\begin{frame}{Stage i commit}{Wyeksponuj i popełnij}
+ 
+\end{frame}
+
+\subsection{Obsługa branch}
+\begin{frame}{Branch}{Zrównoleglij pracę}
+ Podstawowe komendy:
+ \begin{itemize}
+  \item \texttt{git checkout -b branch0} - budowanie nowej gałęzi
+  \item \texttt{git checkout  branch1} - przełączenie się na gałąź już istniejącą
+  \item \texttt{git checkout -d branch1} - usuwanie gałęzi
+  \item \texttt{git branch} - sprawdzanie na jakiej jestem gałęzi i jakie w ogóle istnieją [w moim drzewie?]
+ \end{itemize}
+
 \end{frame}
 
 \section{Zalety}
