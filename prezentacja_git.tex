@@ -31,7 +31,7 @@
 \begin{frame}
  \frametitle{System kontroli wersji}
  \framesubtitle{\textbf{V}ersion \textbf{C}ontrol \textbf{S}ystem}
- Jest to (co?), pozwalający na szeroko rozumiane nadzorowanie zmian w plikach w czasie, np.:
+ Jest to oprogramowanie, pozwalające na szeroko rozumiane nadzorowanie zmian w plikach w czasie, np.:
  \begin{itemize}
   \item badania zmian w obrębie konkretnych fragmentów tekstu, jak linijki
   \item powrotu do wcześniejszych wersji 
@@ -56,9 +56,8 @@
   Potencjalne wady CVS:\@
   \begin{itemize}
   \item kiedy pada centralny serwer, zaniechana jest praca nad projektem
-  \item kiedy padnie sieć[inaczej] współpracownika zaniechana jest jego praca nad projektem
+  \item kiedy padnie sieć współpracownika, zaniechana jest jego praca nad projektem
   \item kiedy pada centralny dysk, na którym wszyscy pracują, to tracimy wszystkie dane 
-  \item tylko snapshoty (co to znaczy?)
  \end{itemize}
 \end{frame}
 
@@ -93,13 +92,6 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 \end{frame}
 
 \subsection{Istota}
-\begin{frame}{Czym jest?}
- Tutaj bardzo nie rozumiem:
- Stream of snaphots - nie przetrzymują kolejnej serii plików, ale "linkują".(Dochodzi to pytanie - co to znaczy, że Git patrzy globalnie, nie plikocentralnie, ale projektocentralnie)
- [książka,str.32]\\
- Przeglądanie historii odbywa się na poziomie lokalnym.\\
- Lokalnie odbywa się również \textit{commit}.\\
-\end{frame}
 
 \begin{frame}{Trzy fazy pracy Gita}{Committed, modified, staged}
  Wyróżniamy trzy etapy pracy w ramach lokalnego repozytorium
@@ -128,6 +120,14 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 \begin{frame}{Branch}
    \begin{center}
    \includegraphics[width=0.8\textwidth]{./obrazki/fig-3_8.png}
+   \footfullcite{pro_git}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+Ciekawszy i bardziej pouczający przykład branch
+   \begin{center}
+   \includegraphics[width=0.8\textwidth]{./obrazki/fig-3_15.png}
    \footfullcite{pro_git}
  \end{center}
 \end{frame}
