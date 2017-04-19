@@ -37,7 +37,8 @@
   \item powrotu do wcześniejszych wersji 
   \item w pracy grupowej - znajdowanie winnego powstałych zmian
  \end{itemize} 
- Pierwszy pomysł na rozwiązanie - Local Control Version System.
+ Pierwszy pomysł na rozwiązanie - Local Control Version System.\\
+ Patch (diff)
 \end{frame}
 
 \section{Centalizacja a rozproszenie}
@@ -58,6 +59,8 @@
   \item kiedy pada centralny serwer, zaniechana jest praca nad projektem
   \item kiedy padnie sieć współpracownika, zaniechana jest jego praca nad projektem
   \item kiedy pada centralny dysk, na którym wszyscy pracują, to tracimy wszystkie dane 
+  \item konflikt na poziomie merge
+  \item konflikty nazw na poziomie branch
  \end{itemize}
 \end{frame}
 
@@ -82,7 +85,7 @@
 \subsection{Historia}
 \begin{frame}
  \frametitle{Jak zrodził się Git?}
-GNU, jądra Linuxa, patches, BitKeeper \\
+GNU, jądra Linuxa: patches, BitKeeper \\
 Linus Torvalds założył, że to nowe narzędzie powinno \\
   \begin{itemize}
   \item być dystrybuowalne
@@ -111,8 +114,7 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 \end{frame}
 
 \begin{frame}{Jak Git dostrzega zmiany?}
- Pliki hashuje się przy użyciu algorytmu \textbf{SHA-1}(Secure Hash Algorithm 1, zapis do 160 bitów, wyświetlanych w postaci 16-stkowej) \\
- 
+ Pliki hashuje się przy użyciu algorytmu \textbf{SHA-1}(Secure Hash Algorithm 1, zapis do 160 bitów, wyświetlanych w postaci 16-stkowej; złamany w tym roku, 65000 lat na jednym procesorze) \\
  Filozofia pointerów - wskaźnik Head, pochodne branch, pochodne commits.
 \end{frame}
 
@@ -146,16 +148,21 @@ Ciekawszy i bardziej pouczający przykład branch
 \begin{frame}{Jak stworzyć repozytorium}
  Dwie strategie
  \begin{itemize}
+  \item Personalizowanie gita \\
+  \texttt{git config --global user.name "Imię Nazwisko" \\
+ git config --global user.email sample@example.com}
   \item Import istniejącego projektu \\
   \texttt{git init}
   \item Klon istniejącego już repozytorium gitowskiego \\
-  \texttt{git clone https://github.com/libgit2/libgit2}
+  \texttt{git clone https://github.com/martasawko/test_}\texttt{po3}
  \end{itemize}
 \end{frame}
 
 \subsection{Stage i commit}
 \begin{frame}{Stage i commit}{Wyeksponuj i popełnij}
- 
+ Dlaczego ważny jest stan pośredni add \\
+ Ignorujemy pliki takie jak np.: pdf, log, aux \\
+ Aby skutecznie je lekceważyć, tworzymy ukryty plik \texttt{.gitignore}, do którego wpisujemy niechciane rozszerzenia 
 \end{frame}
 
 \subsection{Obsługa branch}
@@ -167,6 +174,17 @@ Ciekawszy i bardziej pouczający przykład branch
   \item \texttt{git checkout -d branch1} - usuwanie gałęzi
   \item \texttt{git branch} - sprawdzanie na jakiej jestem gałęzi i jakie w ogóle istnieją [w moim drzewie?]
  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Update wersji}{Pull, fetch}
+  fork - folklor GitHuba?\\
+  Repozytorium szkieletowe (bare) - repozytorium, nie posiadające swojej kopii roboczej; nie możemy pushować do klona, 
+  możemy natomiasto do szkieletu klona
+
+\end{frame}
+
+\begin{frame}{Łączenie i wysyłanie do zdalnego repozytorium}{Push, pull-request}
 
 \end{frame}
 
@@ -185,7 +203,7 @@ Ciekawszy i bardziej pouczający przykład branch
 
 \subsection{Rozmówki gitowskie}
 \begin{frame}
- \frametitle{Savoir-vivre w Gitcie}
+ \frametitle{Savoir-vivre w Gitcie}{Czyli zestaw dobrych nawyków}
 \end{frame}
 
 \end{document}
