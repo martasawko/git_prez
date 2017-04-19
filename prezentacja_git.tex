@@ -41,7 +41,7 @@
  Patch (diff)
 \end{frame}
 
-\section{Centalizacja a rozproszenie}
+\section{Centralizacja a rozproszenie}
 \subsection{Centralizacja}
 \begin{frame}{\textbf{C}entral \textbf{V}ersion Control \textbf{S}ystems}
   Zlokalizowane w jednym miejscu. (tzn gdzie, serwer?) \\
@@ -115,6 +115,7 @@ Linus Torvalds założył, że to nowe narzędzie powinno \\
 
 \begin{frame}{Jak Git dostrzega zmiany?}
  Pliki hashuje się przy użyciu algorytmu \textbf{SHA-1}(Secure Hash Algorithm 1, zapis do 160 bitów, wyświetlanych w postaci 16-stkowej; złamany w tym roku, 65000 lat na jednym procesorze) \\
+ \vspace{3mm}
  Filozofia pointerów - wskaźnik Head, pochodne branch, pochodne commits.
 \end{frame}
 
@@ -146,23 +147,34 @@ Ciekawszy i bardziej pouczający przykład branch
 
 \subsection{Inicjalizacja repozytorium}
 \begin{frame}{Jak stworzyć repozytorium}
- Dwie strategie
- \begin{itemize}
-  \item Personalizowanie gita \\
+  Personalizowanie gita \\
   \texttt{git config --global user.name "Imię Nazwisko" \\
- git config --global user.email sample@example.com}
+ git config --global user.email sample@example.com} \\
+ \vspace{3mm}
+ Dalej, dwie strategie
+ \begin{itemize}
   \item Import istniejącego projektu \\
   \texttt{git init}
   \item Klon istniejącego już repozytorium gitowskiego \\
-  \texttt{git clone https://github.com/martasawko/test_}\texttt{po3}
+  \texttt{git clone https://github.com/martasawko/test\_po3}
  \end{itemize}
 \end{frame}
 
 \subsection{Stage i commit}
 \begin{frame}{Stage i commit}{Wyeksponuj i popełnij}
- Dlaczego ważny jest stan pośredni add \\
+ Pierwsze użycie \textbf{add} - rozpoczynami śledzie pliku i dodajemy go do potencjalnego commita. \\
+ Dlaczego istnieje stan pośredni add? W ramach jednego commita chcemy ująć więcej dokonań w być może wielu plikach. \\
+ \vspace{2mm}
  Ignorujemy pliki takie jak np.: pdf, log, aux \\
  Aby skutecznie je lekceważyć, tworzymy ukryty plik \texttt{.gitignore}, do którego wpisujemy niechciane rozszerzenia 
+\end{frame}
+
+\begin{frame}{Commit}
+  Polecenie \\
+ \texttt{git commit} \\
+ Zwyczajowo - pierwsza linijka jest tytułem, dwie niżej ewentualne dalsze uwagi. \\
+ Lub krócej\\
+ \texttt{git commit -m "Tytuł"}
 \end{frame}
 
 \subsection{Obsługa branch}
@@ -177,16 +189,43 @@ Ciekawszy i bardziej pouczający przykład branch
 
 \end{frame}
 
-\begin{frame}{Update wersji}{Pull, fetch}
-  fork - folklor GitHuba?\\
-  Repozytorium szkieletowe (bare) - repozytorium, nie posiadające swojej kopii roboczej; nie możemy pushować do klona, 
-  możemy natomiasto do szkieletu klona
+\begin{frame}{Klonowanie i wysyłanie}{clone i push}
+  Tworząc klona, u\textbf{nie}zależniamy go od matczynego repozytorium, odtąd nie będzie mogli z niego pushować, będzie natomiast wolno
+  repo-dziecku pullować od repo-matki\\
+  \textit{git clone rep1 rep2} \\
+  \vspace{2mm}
+  Repozytorium szkieletowe (\textit{bare}) - repozytorium, które nie posiada swojej kopii roboczej; nie możemy pushować do zwykłego
+  klona, 
+  możemy natomiasto do szkieletu klona (czym jest w swoim założeniu Git) \\
+  \textit{git clone - -bare rep1 rep-bare}
+\end{frame}
+
+
+\begin{frame}{Update wersji}{Fetch, merge oraz pull}
+
+  \textbf{fetch} jest to ściągnięcie branchy z innego repozytorium, możemy je przeglądnąć i zmegrgować interesujące nas branche \\
+  \vspace{3mm}
+  W klonach można domyślnie fetchować z origin master - będzie to repozytorium, z którego pochodzi klon \\
+  \texttt{git fetch origin master}\\
+  i aby później dokonać ujednolicenia, czyli merge \\
+  \texttt{git merge origin/master} \\
+  \vspace{3mm}
+  lub za jednym zamachem \\ 
+  \textbf{pull} = fetch + merge
 
 \end{frame}
 
-\begin{frame}{Łączenie i wysyłanie do zdalnego repozytorium}{Push, pull-request}
+\begin{frame}{Push}{Tworzenie wskaźników na zdale repozytorium}
 
+ Żeby móc wysyłać, pushować rzeczy do nieznanych lokalizacji, musimy przekazać 
+ repozytorium wskaźnik do repozytorium zdalnego \\
+ \texttt{git remote add nazwa ../remote\_folder} \\
+ \vspace{3mm}
+ (Ciekawa myśl dotycząca stworzenia własnego Githuba za pomocą 
+ bare repozytorium oraz konta na Dropboxie - przechowywanie jedynie indeksów)
+ 
 \end{frame}
+
 
 \section{Zalety}
 
@@ -204,6 +243,10 @@ Ciekawszy i bardziej pouczający przykład branch
 \subsection{Rozmówki gitowskie}
 \begin{frame}
  \frametitle{Savoir-vivre w Gitcie}{Czyli zestaw dobrych nawyków}
+ \begin{itemize}
+  \item Regularne commitowanie
+ \end{itemize}
+
 \end{frame}
 
 \end{document}
